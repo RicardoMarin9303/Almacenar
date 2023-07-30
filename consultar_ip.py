@@ -1,7 +1,7 @@
-import requests
+from requests import get
 
 def obtener_ip_publica():
-    respuesta = requests.get('https://api.ipify.org')
+    respuesta = get('https://api.ipify.org')
     if respuesta.status_code == 200:
         ip_publica = respuesta.text
         return ip_publica
