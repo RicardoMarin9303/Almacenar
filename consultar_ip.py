@@ -1,16 +1,14 @@
-from requests import get
+from requests import get 
 
-def obtener_ip_publica():
-    respuesta = get('https://api.ipify.org')
-    if respuesta.status_code == 200:
-        ip_publica = respuesta.text
+def resolver_ip():
+    servidor = get('https://api.ipify.org')
+    # status_code = variable del sistema, solo recopila la informacion de la respuesta https en este caso 200
+    if servidor.status_code==200:
+        # text propiedad, pide a los datos obtenidos del servidor la ip 
+        ip_publica = servidor.text
         return ip_publica
     else:
         return None
+ip2=resolver_ip()
 
-ip = obtener_ip_publica()
-
-if ip:
-    print("La IP pública de tu equipo es:", ip)
-else:
-    print("No se pudo obtener la IP pública de tu equipo")
+print(ip2)
