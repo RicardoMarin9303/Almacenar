@@ -12,3 +12,5 @@ def resolver_ip():
 ip2=resolver_ip()
 
 print(ip2)
+
+# hola como estas 
